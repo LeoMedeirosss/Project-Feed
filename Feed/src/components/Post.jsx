@@ -21,6 +21,17 @@ export function Post(){
                 <p>Sed lobortis eros nec lacus cursus auctor. Etiam purus purus, efficitur sit amet <a href='#'>vehicula</a>.</p>
             </div>
 
+            <form className={styles.commentForm}>
+                <strong>Deixe seu comentário</strong>
+
+                <textarea
+                    placeholder='Deixe um comentário'
+                />
+                <footer>
+                    <button type='submit'>Publicar</button>
+                </footer>
+            </form>
+
         </article>
     )
 }
