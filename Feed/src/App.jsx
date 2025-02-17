@@ -9,7 +9,7 @@ const posts = [
   {
     id: 1,
     author: {
-      avatarURL: 'https://github.com/LeoMedeirosss.png',
+      avatarUrl: 'https://github.com/John.png',
       name: "Wellington Silva",
       role: "CTO"
     },
@@ -18,7 +18,6 @@ const posts = [
       {type : "paragraph", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
       {type: "link", content: "Suspendisse lacinia"},
       {type : "paragraph", content:"purus mi, rhoncus consequat quam efficitur vel. In varius nunc massa, at condimentum quam feugiat quis. Curabitur semper Lorem ipsum dolor sit amet. Maecenas posuere imperdiet eros at lobortis."},
-      {type : "paragraph", content:"Sed lobortis eros nec lacus cursus auctor. Etiam purus purus, efficitur sit amet."}
     ],
     publishedAt: new Date('2024-10-22 20:00:00'),
   },
@@ -26,7 +25,7 @@ const posts = [
   {
     id: 2,
     author: {
-      avatarURL: 'https://github.com/Roberto.png',
+      avatarUrl: 'https://github.com/Roberto.png',
       name: "Roberto Lima",
       role: "DevOps"
     },
