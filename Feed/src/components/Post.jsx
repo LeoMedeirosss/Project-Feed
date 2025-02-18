@@ -28,11 +28,15 @@ export function Post({ author, publishedAt, content }) {
         event.preventDefault();
     
         setComments([...comments, newCommentText])
-        setNewCommentText("") //voltar ao valor em branco
+        setNewCommentText("") //return to blank value
     }
 
     function handleNewCommentChange(event) {
         setNewCommentText(event.target.value)
+    }
+
+    function deleteComment(comment) {
+        console.log(`deletar comentario ${comment}`)
     }
 
     return (
@@ -53,20 +57,19 @@ export function Post({ author, publishedAt, content }) {
             <div className={styles.content}>
                 {content.map(line => {
                     if(line.type == "paragraph") {
-                        return <p>{line.content}</p>
+                        return <p key={line.content} > {line.content}</p>
                     } else if(line.type == "link") {
-                        return <p><a href='#'>{line.content}</a></p>
+                        return <p key={line.content} ><a href='#'>{line.content}</a></p>
                     }
                 })}
             </div>
 
             <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
                 <strong>Deixe seu comentário</strong>
-
                 <textarea
                     name='comment'
                     placeholder='Deixe um comentário'
-                    value={newCommentText} //refletir a alteração
+                    value={newCommentText} //reflect the change
                     onChange={handleNewCommentChange}
                 />
                 <footer>
@@ -76,10 +79,15 @@ export function Post({ author, publishedAt, content }) {
 
             <div className={styles.commentList}>
                 {comments.map(comment => {
-                    return <Comment content={comment}/>
+                    return (
+                        <Comment 
+                        key={comment} 
+                        content={comment} 
+                        onDeleteComment={deleteComment} //function to Comment.jsx
+                        />
+                    )
                 })}
             </div>
-
         </article>
     )
 }
