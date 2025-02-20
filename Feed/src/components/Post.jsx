@@ -35,6 +35,10 @@ export function Post({ author, publishedAt, content }) {
         setNewCommentText(event.target.value)
     }
 
+    function handleNewCommentInvalid() {
+        
+    }
+
     function deleteComment(commentToDelete) {
         const commentWithoutDeletedOne = comments.filter(comment => {
             return comment != commentToDelete
@@ -75,6 +79,8 @@ export function Post({ author, publishedAt, content }) {
                     placeholder='Deixe um comentário'
                     value={newCommentText} //reflect the change
                     onChange={handleNewCommentChange}
+                    onInvalid={handleNewCommentInvalid}
+                    required
                 />
                 <footer>
                     <button type='submit'>Publicar</button>
